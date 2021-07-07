@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Writing Python with R - Terence Junjie LIU</title>
+    <meta property="og:title" content="Writing Python with R - Terence Junjie LIU">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="R(R Core Team 2019) and Python are two tools for data analysis, data mining or other data related works. As we all know, these works are all laborious and time-consuming and computer, or programming &amp;hellip;">
+      <meta property="og:description" content="R(R Core Team 2019) and Python are two tools for data analysis, data mining or other data related works. As we all know, these works are all laborious and time-consuming and computer, or programming &amp;hellip;">
+      
+    
+
+    
+    
+    <meta name="twitter:image" content="https://rstudio.github.io/reticulate/images/reticulated_python.png">
+    
+    
+
+    
+
+    
+    
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  
+  <body class="2020">
+    <header class="masthead">
+      <h1><a href="/">Terence Junjie LIU</a></h1>
+
+<p class="tagline">A pseudo programmer&#39;s blog
+</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/about/">About</a></li>
+  
+  <li><a href="https://github.com/rstudio/blogdown">GitHub</a></li>
+  
+  <li><a href="/publication/">Publication</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Writing Python with R</h1>
+
+<h3>Terence Lau
+  /  2020-09-03</h3>
+<hr>
+
+
+      </header>
+
+
+
+
+
+
+<script src="/2020/09/03/writing-python-with-r/index_files/header-attrs/header-attrs.js"></script>
+
+
+<em>Or, This post should be named as: Calling <code>Python</code> in <code>R</code>.</em>
+<center>
+<img src="https://rstudio.github.io/reticulate/images/reticulated_python.png" title="fig:" style="width:50.0%" alt="R_and_Python/Python_and_R" />
+</center>
+<div id="section" class="section level2">
+<h2>0</h2>
+<p><code>R</code><span class="citation">(R Core Team <a href="#ref-CRAN" role="doc-biblioref">2019</a>)</span> and <code>Python</code> are two tools for data analysis, data mining or other data related works. As we all know, these works are all laborious and time-consuming and computer, or programming languages, are the tools can release our burden.</p>
+<p><strong>Please, not arguing which language is the best, just choose whatever you like and whatever you need.</strong></p>
+</div>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>In 2018, Rstudio<span class="citation">(RStudio Team <a href="#ref-Rstudio" role="doc-biblioref">2020</a>)</span>, the company produced/released a package called <code>reticulate</code>, a **comprehensive set of tools for r interoperability (互通性) between <code>Python</code> and <code>R</code>. This package contains these functions:</p>
+<ul>
+<li><strong>Calling Python from R</strong> in a variety of ways including R Markdown, sourcing Python scripts, importing Python modules, and using Python interactively within an R session.</li>
+<li><strong>Translation</strong> between R and Python objects (for example, between R and Pandas data frames, or between R matrices and NumPy arrays).</li>
+<li><strong>Flexible binding</strong> to different versions of Python including virtual environments and Conda environments.</li>
+</ul>
+<p>I would like to say this package may change the lifestyle/workstyle of statistics-related research: since they focus on <code>R</code> or traditional statistical method for so many years and may forget the CS’s extrondinary progress: neural-network, deep learning’s, etc. There are so many package are written by <code>python</code> or faced to <code>python</code> user.</p>
+</div>
+<div id="example" class="section level2">
+<h2>Example</h2>
+<p>First, installation:</p>
+<pre class="r"><code># install.packages(&quot;reticulate&quot;, dep = T, repos=&quot;https://mirrors.tuna.tsinghua.edu.cn/CRAN/&quot;)</code></pre>
+<p>Then you can just use it!</p>
+<pre class="r"><code>library(reticulate)</code></pre>
+<pre><code>## Warning: package &#39;reticulate&#39; was built under R version 4.0.3</code></pre>
+<pre class="r"><code># use_python()
+# use_virtualenv()
+Sys.which(&quot;python&quot;)</code></pre>
+<pre><code>##                                                                        python 
+## &quot;C:\\Users\\TERENC~1\\AppData\\Local\\Programs\\Python\\Python38\\python.exe&quot;</code></pre>
+<pre class="r"><code>pandas &lt;- import(&#39;pandas&#39;)
+data &lt;- pandas$read_csv(&#39;dataset/Stock_FX_Bond.csv&#39;)
+attach(data)
+par(mfrow = c(1, 2))
+plot(GM_AC, type = &quot;l&quot;)
+plot(F_AC, type = &quot;b&quot;)</code></pre>
+<p><img src="/2020/09/03/writing-python-with-r/index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre class="r"><code>n = dim(data)[1]
+GMReturn = GM_AC[-1] / GM_AC[-n] - 1 # index -1/-n means all indices except the first/last
+FReturn = F_AC[-1] / F_AC[-n] - 1
+par(mfrow = c(1,1))
+plot(GMReturn, FReturn)</code></pre>
+<p><img src="/2020/09/03/writing-python-with-r/index_files/figure-html/unnamed-chunk-3-2.png" width="672" /></p>
+<p>You can also use <code>Pytorch</code> , An open source machine learning framework which can accelerates your programme.</p>
+<pre class="r"><code>torch &lt;- import(&#39;torch&#39;)
+torch$set_default_dtype(torch$float64)
+torch$tensor(list(1.2, 3))</code></pre>
+<pre><code>## tensor([1.2000, 3.0000])</code></pre>
+<pre class="r"><code>byte    &lt;- torch$ByteTensor(3L, 3L)
+float   &lt;- torch$FloatTensor(3L, 3L)
+double  &lt;- torch$DoubleTensor(3L, 3L)
+long    &lt;- torch$LongTensor(3L, 3L)
+boolean &lt;- torch$BoolTensor(5L, 5L)
+byte</code></pre>
+<pre><code>## tensor([[ 0,  0,  0],
+##         [ 0,  0,  0],
+##         [ 0,  0, 48]], dtype=torch.uint8)</code></pre>
+<pre class="r"><code>float</code></pre>
+<pre><code>## tensor([[0., 0., 0.],
+##         [0., 0., 0.],
+##         [0., 0., 0.]], dtype=torch.float32)</code></pre>
+<pre class="r"><code>double</code></pre>
+<pre><code>## tensor([[8.4598e-315, 8.4598e-315, 8.4598e-315],
+##         [8.4598e-315, 8.5118e-315, 8.4897e-315],
+##         [8.5573e-315, 8.5573e-315, 8.5571e-315]])</code></pre>
+<pre class="r"><code>long</code></pre>
+<pre><code>## tensor([[1731988880, 1718339056, 1732027856],
+##         [1718338608, 1712276816, 1712276816],
+##         [1732028624, 1732009488, 1731965328]])</code></pre>
+<pre class="r"><code>boolean</code></pre>
+<pre><code>## tensor([[ True, False, False, False, False],
+##         [False, False, False, False, False],
+##         [False, False, False, False, False],
+##         [False, False, False, False, False],
+##         [False, False, False, False, False]])</code></pre>
+<p>Here is an example of using <code>torch</code> to do the MNIST handwritten digits:<span class="citation">(Choi <a href="#ref-MNISTYunjey" role="doc-biblioref">2018</a>)</span></p>
+<pre class="r"><code>torch &lt;- import(&#39;torch&#39;)
+torchvision &lt;- import(&#39;torchvision&#39;)
+nn          &lt;- torch$nn
+transforms  &lt;- torchvision$transforms
+torch$set_default_dtype(torch$float)
+
+# Hyper-parameters 
+input_size    &lt;- 784L
+num_classes   &lt;- 10L
+num_epochs    &lt;- 5L
+batch_size    &lt;- 100L
+learning_rate &lt;- 0.001
+
+# MNIST dataset (images and labels)
+# IDX format
+local_folder &lt;- &#39;./datasets/raw_data&#39;
+train_dataset = torchvision$datasets$MNIST(root=local_folder, 
+                                           train=TRUE, 
+                                           transform=transforms$ToTensor(),
+                                           download=TRUE)
+
+test_dataset = torchvision$datasets$MNIST(root=local_folder, 
+                                          train=FALSE, 
+                                          transform=transforms$ToTensor())
+
+# Data loader (input pipeline). Make the datasets iteratble
+train_loader = torch$utils$data$DataLoader(dataset=train_dataset, 
+                                           batch_size=batch_size, 
+                                           shuffle=TRUE)
+
+test_loader = torch$utils$data$DataLoader(dataset=test_dataset, 
+                                          batch_size=batch_size, 
+                                          shuffle=FALSE)
+
+class(train_loader)</code></pre>
+<pre><code>## [1] &quot;torch.utils.data.dataloader.DataLoader&quot;
+## [2] &quot;python.builtin.object&quot;</code></pre>
+<pre class="r"><code>#&gt; [1] &quot;torch.utils.data.dataloader.DataLoader&quot;
+#&gt; [2] &quot;python.builtin.object&quot;
+length(train_loader)</code></pre>
+<pre><code>## [1] 2</code></pre>
+<pre class="r"><code>#&gt; [1] 2
+
+# Logistic regression model
+model = nn$Linear(input_size, num_classes)
+
+# Loss and optimizer
+# nn.CrossEntropyLoss() computes softmax internally
+criterion = nn$CrossEntropyLoss()  
+optimizer = torch$optim$SGD(model$parameters(), lr=learning_rate)  
+print(model)</code></pre>
+<pre><code>## Linear(in_features=784, out_features=10, bias=True)</code></pre>
+<pre class="r"><code>#&gt; Linear(in_features=784, out_features=10, bias=True)
+
+# Train the model
+iter_train_loader &lt;- iterate(train_loader)
+total_step &lt;-length(iter_train_loader)
+
+for (epoch in 1:num_epochs) {
+    i &lt;-  0
+    for (obj in iter_train_loader) {
+        
+        images &lt;- obj[[1]]   # tensor torch.Size([64, 3, 28, 28])
+        labels &lt;- obj[[2]]   # tensor torch.Size([64]), labels from 0 to 9
+        # cat(i, &quot;\t&quot;); print(images$shape)
+
+        # Reshape images to (batch_size, input_size)
+        images &lt;- images$reshape(-1L, 28L*28L)
+        # images &lt;- torch$as_tensor(images$reshape(-1L, 28L*28L), dtype=torch$double)
+
+        # Forward pass
+        outputs &lt;- model(images)
+        loss &lt;- criterion(outputs, labels)
+
+        # Backward and optimize
+        optimizer$zero_grad()
+        loss$backward()
+        optimizer$step()
+
+        if ((i+1) %% 100 == 0) {
+            cat(sprintf(&#39;Epoch [%d/%d], Step [%d/%d], Loss: %f \n&#39;,
+                epoch, num_epochs, i+1, total_step, loss$item()))
+        }
+        i &lt;-  i + 1
+    }
+}  </code></pre>
+<pre><code>## Epoch [1/5], Step [100/600], Loss: 2.243049 
+## Epoch [1/5], Step [200/600], Loss: 2.120401 
+## Epoch [1/5], Step [300/600], Loss: 2.071192 
+## Epoch [1/5], Step [400/600], Loss: 1.958295 
+## Epoch [1/5], Step [500/600], Loss: 1.879076 
+## Epoch [1/5], Step [600/600], Loss: 1.805387 
+## Epoch [2/5], Step [100/600], Loss: 1.750502 
+## Epoch [2/5], Step [200/600], Loss: 1.675197 
+## Epoch [2/5], Step [300/600], Loss: 1.673908 
+## Epoch [2/5], Step [400/600], Loss: 1.551905 
+## Epoch [2/5], Step [500/600], Loss: 1.499509 
+## Epoch [2/5], Step [600/600], Loss: 1.459108 
+## Epoch [3/5], Step [100/600], Loss: 1.423461 
+## Epoch [3/5], Step [200/600], Loss: 1.389941 
+## Epoch [3/5], Step [300/600], Loss: 1.405990 
+## Epoch [3/5], Step [400/600], Loss: 1.284738 
+## Epoch [3/5], Step [500/600], Loss: 1.253112 
+## Epoch [3/5], Step [600/600], Loss: 1.229778 
+## Epoch [4/5], Step [100/600], Loss: 1.206374 
+## Epoch [4/5], Step [200/600], Loss: 1.200724 
+## Epoch [4/5], Step [300/600], Loss: 1.223891 
+## Epoch [4/5], Step [400/600], Loss: 1.104128 
+## Epoch [4/5], Step [500/600], Loss: 1.087438 
+## Epoch [4/5], Step [600/600], Loss: 1.071864 
+## Epoch [5/5], Step [100/600], Loss: 1.057129 
+## Epoch [5/5], Step [200/600], Loss: 1.068653 
+## Epoch [5/5], Step [300/600], Loss: 1.095702 
+## Epoch [5/5], Step [400/600], Loss: 0.976525 
+## Epoch [5/5], Step [500/600], Loss: 0.970327 
+## Epoch [5/5], Step [600/600], Loss: 0.958247</code></pre>
+<pre class="r"><code># Adjust weights and reset gradients
+iter_test_loader &lt;- iterate(test_loader)
+
+with(torch$no_grad(), {
+    correct &lt;-  0
+    total &lt;-  0
+    for (obj in iter_test_loader) {
+        images &lt;- obj[[1]]   # tensor torch.Size([64, 3, 28, 28])
+        labels &lt;- obj[[2]]   # tensor torch.Size([64]), labels from 0 to 9
+        images = images$reshape(-1L, 28L*28L)
+        # images &lt;- torch$as_tensor(images$reshape(-1L, 28L*28L), dtype=torch$double)
+        outputs = model(images)
+        .predicted = torch$max(outputs$data, 1L)
+        predicted &lt;- .predicted[1L]
+        total = total + labels$size(0L)
+        correct = correct + sum((predicted$numpy() == labels$numpy()))
+    }
+    cat(sprintf(&#39;Accuracy of the model on the 10000 test images: %f %%&#39;, (100 * correct / total)))
+  
+})</code></pre>
+<pre><code>## Accuracy of the model on the 10000 test images: 83.000000 %</code></pre>
+<pre class="r"><code>#&gt; Accuracy of the model on the 10000 test images: 82.780000 %</code></pre>
+</div>
+<div id="end" class="section level2">
+<h2>End</h2>
+<p>As you can see, data analysis is no matter <code>R</code> or <code>python</code>.</p>
+</div>
+<div id="reference" class="section level2 unnumbered">
+<h2>Reference</h2>
+<div id="refs" class="references hanging-indent">
+<div id="ref-MNISTYunjey">
+<p>Choi, Yunjey. 2018. “Pytorch Tutorials 01-Basics:MNIST Handwritten Digits.” 2018. <a href="https://github.com/yunjey/pytorch-tutorial/blob/master/tutorials/01-basics/logistic_regression/main.py">https://github.com/yunjey/pytorch-tutorial/blob/master/tutorials/01-basics/logistic_regression/main.py</a>.</p>
+</div>
+<div id="ref-CRAN">
+<p>R Core Team. 2019. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.</p>
+</div>
+<div id="ref-Rstudio">
+<p>RStudio Team. 2020. <em>RStudio: Integrated Development Environment for R</em>. Boston, MA: RStudio, PBC. <a href="http://www.rstudio.com/">http://www.rstudio.com/</a>.</p>
+</div>
+</div>
+</div>
+
+
+
+  <footer>
+  
+  
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+  
+  <hr>
+  <div class="copyright">© <a href="https://github.com/TerenceLiu98">TerenceLau - 2016-2021 || Creative Commons Attribution CC BY 4.0</a>  <br> THEME: <a href="https://github.com/yihui/hugo-ivy">yihui/hugo-ivy</a></div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+

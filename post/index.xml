@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Terence Junjie LIU</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on Terence Junjie LIU</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 25 Feb 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Loading Big Files in MySQL</title>
+      <link>/2021/02/25/loading-big-files-in-mysql/</link>
+      <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/2021/02/25/loading-big-files-in-mysql/</guid>
+      <description>RecapRecently I am working on a project about financial news and index forecasting, which means I may needs to collect multiple news including the traditional newspapers and so called “internet media”’s news. The crawl is hard because every news provider comes up a subscription type recently. But some how, I found a project called “Global Database of Emotions, Language and Tone” and I am trying to get the news I needs from that database.</description>
+    </item>
+    
+    <item>
+      <title>2020-Summerization</title>
+      <link>/2021/01/02/2020-summarization/</link>
+      <pubDate>Sat, 02 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/2021/01/02/2020-summarization/</guid>
+      <description>前言2021/01/02，突然想写下 2020 的总结，也不能算是总结，流水一下，记录 2020 的“悲惨”人生。
+第一季度除了疫情，春天还发生了很多事，比如在这个申请季全军覆没，比如家里人去世。我承认有赌的成分，但是确实成绩差了不少，所幸，中介如合同办事，成功退回中介费还嫖到了中介的文书（不说很烂，但质量确实很一般）。第一季度，也是大四的最后一个学期，完成了 FYP2， 也提出了一个不能算是新方法的 “novel algorithm”， 老师也觉得可以投个 conference试试。算是给 CV 多增了一些好看的东西吧。
+第二季度无所事事，网课也没好好上，而且我最后一个学期还是 4 门课（大三 drop 了一门，另外自己多加了一门）， 不过还好，最后一个学期 GPA竟然上 3 了，也是四年第一次上 3 :)
+paper 也写的差不多了，在 submission 的最后几天投了出去
+第三季度某 5G 公司邀请我过去实习，便去了，每天都要从市区坐一个多小时的地铁去到科学城，人都傻了。做着与专业无关的工作（翻译文档），终日以麦当劳薯饼为生。最后在 8 月中以 paper 被 accept 老师要我早点回学校为由炒掉了老板。
+暑假结束，回到学校开始 Research Assistant 生活。
+第四季度RA 的生活说忙不忙，说不忙也很忙，不忙的是时间可以自己安排，忙的是每天都有干不完的活，毕竟有 paper 产出才是最终目标。也还好，Mphil有了眉目，基本算是尘埃落定了。
+总结生活总是起起落落，努不努力都一样， 疫情前其实我就很躺平，现在的目标能吃到想吃的就很好。（我是丧逼）
+</description>
+    </item>
+    
+    <item>
+      <title>Previous Post</title>
+      <link>/2020/11/27/previous-post/</link>
+      <pubDate>Fri, 27 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/11/27/previous-post/</guid>
+      <description>Some links of my previous blogs:
+jianshuzhihu</description>
+    </item>
+    
+    <item>
+      <title>security daily</title>
+      <link>/2020/10/24/security-daily/</link>
+      <pubDate>Sat, 24 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/10/24/security-daily/</guid>
+      <description>敬告：以此记录作为保安的一天， 全文为笔者主观臆断、胡思乱想，纯属虚构
+惠同村，是一个古村，我生于此，长于此。虽说祠堂里写着这里的历史，但并没有给我带来什么实质性的利益。成为了村里的联防队员后，每日过着重复且无变化的一天。
+七点半，是我每天早上起来的时间，村口的钟会在七点准时敲响，虽然是铜钟的声音，但是听村里技术员说是卫星传时间过来的，很准。因为有了抖音，我从原来的七点起床改到了七点半，半个小时，足够让我给村里的亲戚朋友评论和点赞了；
+刷完牙洗完脸，喝粥配咸蛋黄，骑着村里配的本田摩托车，我到了村口榕树头值班点。村口有个小便利店，是我二表舅开的，进去店里吹吹水，趁他们不注意拿走了一包白沙，别说什么“便宜烟伤身体”，味道浓才是硬道理。
+这几年，村旁边盖了个学校，让村委会都看到了商机。村长也是留过洋的人，深知这些搞艺术的人喜欢什么：咖啡厅，民宿都搞了起来。就这样，村里的闲杂人等逐渐的多了起来，姑且称他们为“游客”吧。看到抖音上说，旅游就是从你待厌的地方到别人待厌的地方，不知道他们怎么想的。
+游客们很多都是外地人，村长开的餐厅让他们大开眼界：原来广东还有这么小的鸡！其实村里还有很多的好餐厅嘛，不过大家就喜欢聚众。
+风好大，把联防队发的风衣穿上，虽然我们就是保安，但是村里配的东西还是很齐全的，毕竟这几年也赚了不少钱，政府还补了一大块地，就是村外面的那排别墅。</description>
+    </item>
+    
+    <item>
+      <title>Writing Python with R</title>
+      <link>/2020/09/03/writing-python-with-r/</link>
+      <pubDate>Thu, 03 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/09/03/writing-python-with-r/</guid>
+      <description>Or, This post should be named as: Calling Python in R.0R(R Core Team 2019) and Python are two tools for data analysis, data mining or other data related works. As we all know, these works are all laborious and time-consuming and computer, or programming languages, are the tools can release our burden.
+Please, not arguing which language is the best, just choose whatever you like and whatever you need.</description>
+    </item>
+    
+  </channel>
+</rss>

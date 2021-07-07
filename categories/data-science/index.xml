@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Science on Terence Junjie LIU</title>
+    <link>/categories/data-science/</link>
+    <description>Recent content in Data Science on Terence Junjie LIU</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 25 Feb 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/data-science/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Loading Big Files in MySQL</title>
+      <link>/2021/02/25/loading-big-files-in-mysql/</link>
+      <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/2021/02/25/loading-big-files-in-mysql/</guid>
+      <description>RecapRecently I am working on a project about financial news and index forecasting, which means I may needs to collect multiple news including the traditional newspapers and so called “internet media”’s news. The crawl is hard because every news provider comes up a subscription type recently. But some how, I found a project called “Global Database of Emotions, Language and Tone” and I am trying to get the news I needs from that database.</description>
+    </item>
+    
+  </channel>
+</rss>

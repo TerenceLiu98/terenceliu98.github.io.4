@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Loading Big Files in MySQL - Terence Junjie LIU</title>
+    <meta property="og:title" content="Loading Big Files in MySQL - Terence Junjie LIU">
+    
+    <meta name="twitter:card" content="summary">
+
+    
+      
+    
+
+    
+      
+      <meta property="description" content="Recently I am working on a project about financial news and index forecasting, which means I may needs to collect multiple news including the traditional newspapers and so called “internet media”’s &amp;hellip;">
+      <meta property="og:description" content="Recently I am working on a project about financial news and index forecasting, which means I may needs to collect multiple news including the traditional newspapers and so called “internet media”’s &amp;hellip;">
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  
+  <body class="2021">
+    <header class="masthead">
+      <h1><a href="/">Terence Junjie LIU</a></h1>
+
+<p class="tagline">A pseudo programmer&#39;s blog
+</p>
+
+      <nav class="menu">
+  <input id="menu-check" type="checkbox" hidden/>
+  <label id="menu-label" for="menu-check" class="unselectable" hidden>
+    <span class="icon close-icon">✕</span>
+    <span class="icon open-icon">☰</span>
+    <span class="text">Menu</span>
+  </label>
+  <ul>
+  
+  
+  <li><a href="/about/">About</a></li>
+  
+  <li><a href="https://github.com/rstudio/blogdown">GitHub</a></li>
+  
+  <li><a href="/publication/">Publication</a></li>
+  
+  
+  </ul>
+</nav>
+
+    </header>
+
+    <article class="main">
+      <header class="title">
+      
+<h1>Loading Big Files in MySQL</h1>
+
+<h3>TerenceLiu98
+  /  2021-02-25</h3>
+<hr>
+
+
+      </header>
+
+
+
+
+
+
+<script src="/2021/02/25/loading-big-files-in-mysql/index_files/header-attrs/header-attrs.js"></script>
+
+
+<div id="recap" class="section level2">
+<h2>Recap</h2>
+<p>Recently I am working on a project about financial news and index forecasting, which means I may needs to collect multiple news including the traditional newspapers and so called “internet media”’s news. The crawl is hard because every news provider comes up a subscription type recently. But some how, I found a project called “Global Database of Emotions, Language and Tone” and I am trying to get the news I needs from that database.</p>
+</div>
+<div id="preprocessing" class="section level2">
+<h2>Preprocessing</h2>
+<p>For reason, the university’s internet cannot access Google directly, so I just added a proxy for the server I am using. BTW, the <code>proxychains4</code> is so good that it helps me a lot.</p>
+</div>
+<div id="gdeltpyr-and-gdeltr2" class="section level2">
+<h2>gdeltPyR and gdeltr2</h2>
+<p>These are two packages for collecting data from GDELT in two platform (<code>gdeltPyR</code> is for <code>python</code> and <code>gdeltr2</code> is for <code>R</code>), and these are both good packages helping me to escape from paying to Google and Amazon as the official way of querying is <code>Big Query</code> and <code>Althena</code>. You can check the packages with these URL:</p>
+<ul>
+<li><a href="https://github.com/linwoodc3/gdeltPyR">gdeltPyR</a></li>
+<li><a href="https://github.com/abresler/gdeltr2">gdeltr2</a></li>
+</ul>
+<p>The github repos provide some examples so I will skip this part.</p>
+</div>
+<div id="loading-data-in-mysql" class="section level2">
+<h2>Loading data in Mysql</h2>
+<p>The reason of using a database is that the data is so large that if we just read it from <code>.csv</code> it will cause us multiple time in waiting. For now I just collect the events data from 2014 to 2020 and it cost me about 170G in storage. Hence, store the data into a database maybe a good choice for our querying.</p>
+<p>Loading that kinds of huge file is not easy for every system, so I tried to split the file into separated small files and load them one-by-one. This is the shell script:</p>
+<pre class="bash"><code>#!/bin/bash
+
+function loadFile(){
+        mysql -u&quot;[USERNAME]&quot; -p&quot;[USERNAME]&quot; --local-infile=1 [DATABASE_NAME] &lt;&lt; EOF
+        SET GLOBAL local_infile = &#39;ON&#39;; 
+                LOAD DATA LOCAL INFILE &quot;$1&quot; INTO TABLE $2
+                        COLUMNS TERMINATED BY &#39;,&#39;
+                        OPTIONALLY ENCLOSED BY &#39;&quot;&#39;
+                        ESCAPED BY &#39;&quot;&#39;
+                        LINES TERMINATED BY &#39;\n&#39;
+                        IGNORE 1 LINES;
+exit
+EOF
+}
+
+echo &quot;data is: $1&quot;
+echo &quot;table is $2&quot;
+
+mkdir $1
+mv $1.csv $1/
+cd $1/
+echo &quot;spliting file...&quot;
+split -l 10000 $1.csv -d data
+rename &#39;s/$/\.csv/&#39;  *
+echo &quot;the split done&quot;
+echo &quot;tranfer the csv file into database [DATABASE_NAME] table $2&quot;
+sleep 3
+
+for fileName in data*; do
+        echo &quot;begin load file $fileName...&quot;
+        loadFile $fileName $2;
+        rm -rf $fileName;
+        echo &quot;finsh load file $fileName and deleted&quot;
+done
+
+cd ..
+rm -rf $1/
+</code></pre>
+</div>
+
+
+
+  <footer>
+  
+  
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+  
+  <hr>
+  <div class="copyright">© <a href="https://github.com/TerenceLiu98">TerenceLau - 2016-2021 || Creative Commons Attribution CC BY 4.0</a>  <br> THEME: <a href="https://github.com/yihui/hugo-ivy">yihui/hugo-ivy</a></div>
+  
+  </footer>
+  </article>
+  
+  </body>
+</html>
+
