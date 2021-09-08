@@ -3,17 +3,52 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/2021/08/03/aur/</loc>
+    <lastmod>2021-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2021-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/linux/</loc>
+    <lastmod>2021-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2021-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/system/</loc>
+    <lastmod>2021-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/system/</loc>
+    <lastmod>2021-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2021-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2021-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/blog/</loc>
     <lastmod>2021-02-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/blog/</loc>
-    <lastmod>2021-02-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
     <lastmod>2021-02-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -28,22 +63,7 @@
   </url>
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2021-02-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/sql/</loc>
-    <lastmod>2021-02-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2021-02-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
     <lastmod>2021-02-25T00:00:00+00:00</lastmod>
   </url>
   
