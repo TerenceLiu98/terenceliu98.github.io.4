@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Terence Junjie LIU</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AUR 让我受震撼</title>
+      <link>/2021/08/03/aur/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/2021/08/03/aur/</guid>
+      <description>刚刚转用 Garuda Linux， AUR 的存在真的让我大为震撼。</description>
+    </item>
     
     <item>
       <title>Loading Big Files in MySQL</title>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>System on Terence Junjie LIU</title>
+    <link>/tags/system/</link>
+    <description>Recent content in System on Terence Junjie LIU</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/system/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AUR 让我受震撼</title>
+      <link>/2021/08/03/aur/</link>
+      <pubDate>Tue, 03 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/2021/08/03/aur/</guid>
+      <description>刚刚转用 Garuda Linux， AUR 的存在真的让我大为震撼。</description>
+    </item>
+    
+  </channel>
+</rss>
