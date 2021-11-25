@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/2021/08/03/aur/</loc>
+    <lastmod>2021-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2021-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/linux/</loc>
+    <lastmod>2021-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2021-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/system/</loc>
+    <lastmod>2021-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/system/</loc>
+    <lastmod>2021-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2021-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2021-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/blog/</loc>
+    <lastmod>2021-02-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/blog/</loc>
+    <lastmod>2021-02-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/data-science/</loc>
+    <lastmod>2021-02-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2021/02/25/loading-big-files-in-mysql/</loc>
+    <lastmod>2021-02-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/sql/</loc>
+    <lastmod>2021-02-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2021/01/02/2020-summarization/</loc>
+    <lastmod>2021-01-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/annual/</loc>
+    <lastmod>2021-01-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2020/11/27/previous-post/</loc>
+    <lastmod>2020-11-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/literature/</loc>
+    <lastmod>2020-10-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/literature/</loc>
+    <lastmod>2020-10-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2020/10/24/security-daily/</loc>
+    <lastmod>2020-10-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/python/</loc>
+    <lastmod>2020-09-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/python/</loc>
+    <lastmod>2020-09-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/r/</loc>
+    <lastmod>2020-09-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/r/</loc>
+    <lastmod>2020-09-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2020/09/03/writing-python-with-r/</loc>
+    <lastmod>2020-09-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/about/</loc>
+    <lastmod>2016-05-05T21:48:51-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/</loc>
+    <lastmod>2016-05-05T21:48:51-07:00</lastmod>
+  </url>
+  
+</urlset>

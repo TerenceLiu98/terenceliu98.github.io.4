@@ -6,49 +6,10 @@
     <description>Recent content on Terence Junjie LIU</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 09 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Aug 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>New Place to Live</title>
-      <link>/2021/10/09/new-place-to-live/</link>
-      <pubDate>Sat, 09 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/2021/10/09/new-place-to-live/</guid>
-      <description>新学期开始了一个多月才动笔写这篇文章，实在有点忙….
-学校并没有给 research postgraduate 提供宿舍（却给 taught master 提供，离谱），所以只能选择住入了远在中山的家人的屋子里，所幸，去学校有教职员通勤车站点，便舔着脸坐了上去。
-搬东西总是最痛苦的，还好，有车可以借用才得以顺利一次过搬上楼。稍微布置一下，就入住了。
-总的来说，距离还是有些远的，赶不上班车的日子只能骑自行车，只当是强制锻炼身体了，从一开始花费 45 分钟左右，到现在 35 分钟之内可以搞定，身体也感觉到有些明显的变化，对于我这种长期坐在电脑前的人来说，也不是一件坏事。
-
-买了张 Haworth Look, 毕竟是长期对着电脑，对自己的腰好一点是很应该的。因为 Look 没有一手的，在京东入手了一个二手的，一个月的体验下来，感觉还是不错的，做工十分扎实，坐感没有网上说的那么软（支撑性好），背靠上下可调。
-
-为了对抗室内家具散发的有毒气体，买了几盘花花草草，散养状态。
-
-总的来说，目前上学的体验感还可以，看看冬天会不会有什么变化，虽然元旦就放假了，希望这几天的雨能让广东迅速入冬(qiu)。</description>
-    </item>
-    
-    <item>
-      <title>Mathematical Statistics Notes</title>
-      <link>/2021/10/08/mathematical-statistics-notes/</link>
-      <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/2021/10/08/mathematical-statistics-notes/</guid>
-      <description>This semester we have a course “Advanced Mathematical Statistics”, I take my note with notion, and share to public, you can comment on the text if you find any mistake.
-NoteTextbook</description>
-    </item>
-    
-    <item>
-      <title>Publication</title>
-      <link>/publication/</link>
-      <pubDate>Sun, 26 Sep 2021 21:48:51 -0700</pubDate>
-      
-      <guid>/publication/</guid>
-      <description>2021  LIU, J., Peng, X, &amp;amp; DENG, Y. (2021). Online Statistics Teaching-assisted Platform with Interactive Web Applications using R Shiny. (accepted by) The 6th International Symposium on emerging Technologies for Education
- DOI: NA Type: Conference Paper    LIU, J., TSANG, K., &amp;amp; DENG, Y. (2021). A Variant RSA Acceleration with Parallelization. (in review at) International Journal of Parallel, Emergent and Distributed Systems
- DOI: arXiv preprint arXiv:2111.</description>
-    </item>
     
     <item>
       <title>AUR 让我受震撼</title>
@@ -129,6 +90,17 @@ Please, not arguing which language is the best, just choose whatever you like an
       <description>Who AM I My name is Terence Lau, AKA:
  Terry Lau/Liu Terence Liu ChunKit Lau JunJie LIU  fun fact: Terence sounds like 特仑苏, therefore, I choose deluxelau.com as the my domain. I have no correlation to deluxe-related region, firm, or organization
 Education  B.Sc with honors in Statistics from BNU-HKBU United International College MPhil Candidate (start from Sep 2021, a joint program of UIC and HKBU), in the field of Probability and Mathematical Statistics, under Dr.</description>
+    </item>
+    
+    <item>
+      <title>Publication</title>
+      <link>/publication/</link>
+      <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
+      
+      <guid>/publication/</guid>
+      <description>2021  LIU, J., Peng, X, &amp;amp; DENG, Y. (2021). Online Statistics Teaching-assisted Platform with Interactive Web Applications using R Shiny. (in review at) The 6th International Symposium on emerging Technologies for Education
+ DOI: NA Type: Conference Paper    LIU, J., TSANG, K., &amp;amp; DENG, Y. (2021). A Variant RSA Acceleration with Parallelization. (in review at) International Journal of Computer Mathematics.
+ DOI: NA Type: Journal Paper    LIU, J.</description>
     </item>
     
   </channel>
